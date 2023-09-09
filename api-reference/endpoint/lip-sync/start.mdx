@@ -1,0 +1,52 @@
+---
+title: "Start Lip Sync Inference"
+api: "POST https://app.fluxon.dev/api/v1/lipsync/inference"
+description: "This endpoint creates a new lip-sync inference"
+---
+
+### Body
+
+<ParamField body="audio" type="file">
+  This is the audio to be synced
+</ParamField>
+
+<ParamField body="video" type="file">
+  This is the video to be synced
+</ParamField>
+
+### Header
+
+<ParamField header="Authorization" type="string">
+  This is the user auth token generated for app.fluxon.dev.
+</ParamField>
+
+<ParamField header="Content-Type" type="string" initialValue="multipart/form-data" default="multipart/form-data" >
+  Content-Type of the request
+</ParamField>
+
+### Response
+
+<ResponseField name="id" type="uuid">
+  The tracking id of the lip-sync inference task.
+</ResponseField>
+
+<RequestExample>
+
+```bash Example Request
+curl --location 'https://app.fluxon.dev/api/v1/lipsync/inference' \
+--header 'Authorization: metlo.abcdEFGH12345678zyxw' \
+--form 'audio=@"/Users/test-user/audio.wav"' \
+--form 'video=@"/Users/test-user/video.mp4"'
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Response
+{
+    "id": "fda3de6f-6b8f-42d6-a46a-8fdf772bcf19"
+}
+```
+
+</ResponseExample>
