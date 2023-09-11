@@ -3,19 +3,18 @@
   "name": "Starter Kit",
   "logo": {
     "dark": "/logo/dark.svg",
-    "light": "/logo/light.svg"
+    "light": "/logo/dark.svg"
+  },
+  "modeToggle": {
+    "isHidden": true,
+    "default": "dark"
   },
   "favicon": "/favicon.png",
   "colors": {
-    "primary": "#9563FF",
-    "light": "#E2FB52",
+    "primary": "#fcffee",
     "dark": "#E2FB52",
     "background": {
       "dark": "#090014"
-    },
-    "anchors": {
-      "from": "#fcffee",
-      "to": "#fcffee"
     }
   },
   "topbarLinks": [
@@ -32,7 +31,7 @@
   "anchors": [
     {
       "name": "API Reference",
-      "icon": "code",
+      "icon": "webhook",
       "url": "api-reference"
     }
   ],

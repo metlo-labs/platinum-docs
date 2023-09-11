@@ -12,22 +12,22 @@ description: "This endpoint gets the usage statistics of the API"
 
 ### Response
 
-<ResponseField name="dailyAgg" type="String">
+<ResponseField name="dailyAgg" type="string">
   The API returns a 200 OK response if it is available
   <Expandable title="Attributes"> 
-    <ResponseField name="datestr" type="String">
+    <ResponseField name="datestr" type="string">
       The usage date.
     </ResponseField>
-    <ResponseField name="call_type" type="String">
+    <ResponseField name="call_type" type="string">
       Kind of call performed. Different APIs may consume usage from different pools.
     </ResponseField>
-    <ResponseField name="num_calls" type="String">
+    <ResponseField name="num_calls" type="string">
       The number of calls for a type.
     </ResponseField>
-    <ResponseField name="num_chars" type="String">
+    <ResponseField name="num_chars" type="string">
       The number of chars used in total for a type. May or may not be present dependent on type of API used.
     </ResponseField>
-    <ResponseField name="num_errs" type="String">
+    <ResponseField name="num_errs" type="string">
       The number of errors generated in a given period.
     </ResponseField>
   </Expandable>

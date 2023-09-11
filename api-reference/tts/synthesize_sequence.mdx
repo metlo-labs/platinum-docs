@@ -6,27 +6,27 @@ description: "This endpoint synthesizes is used to synthesize a conversation bet
 
 ### Body
 
-<ParamField path="voiceUuid" type="uuid">
+<ParamField body="voiceUuid" type="uuid">
   The id of the voice to use for the synthesis
 </ParamField>
 
-<ParamField path="text" type="uuid">
+<ParamField body="text" type="uuid">
   The text to synthesize
 </ParamField>
 
-<ParamField path="pitch" type="u16">
+<ParamField body="pitch" type="int">
   The pitch of the voice to be synthesized
 </ParamField>
 
-<ParamField path="speed" type="u16">
+<ParamField body="speed" type="int">
   The speed of the voice to be synthesized
 </ParamField>
 
-<ParamField path="delayAfter" type="f32">
+<ParamField body="delayAfter" type="float">
   The gap after a synthesized voice. Is optional.
 </ParamField>
 
-<ParamField path="delayBefore" type="f32">
+<ParamField body="delayBefore" type="float">
   The gap before a synthesized voice. Is optional.
 </ParamField>
 
@@ -39,7 +39,7 @@ description: "This endpoint synthesizes is used to synthesize a conversation bet
 ### Response
 
 <ResponseField name="uuid" type="uuid">
-  The id of the task synthesizing the conversation. This can be fetched by using the API at [GET Synthesize Sequence](api-reference/tts/synthesize_sequence)
+  The id of the task synthesizing the conversation. This can be fetched by using the API at [GET Synthesize Sequence](/api-reference/tts/get_synthesize_sequence)
 </ResponseField>
 
 <RequestExample>
