@@ -1,0 +1,46 @@
+---
+title: "Synthesize single text"
+api: "GET https://app.fluxon.dev/api/v1/tts/synthesize/:id"
+description: "This endpoint synthesizes a single piece of text in a single API call"
+---
+
+### Path
+
+<ParamField path="id" type="string">
+  The id of the voice to use for the synthesis
+</ParamField>
+
+### Query
+
+<ParamField query="text" type="string">
+  The text to synthesize
+</ParamField>
+
+<ParamField query="pitch" type="u16">
+  The pitch of the speech to be synthesized. Ranges from 0 to 400 and defaults to 100. 
+</ParamField>
+
+<ParamField query="speed" type="u16">
+  The speed of the speech to be synthesized. Ranges from 0 to 400 and defaults to 100. 
+</ParamField>
+
+### Header
+
+<ParamField header="Authorization" type="string">
+  This is the user auth token generated for app.fluxon.dev.
+</ParamField>
+
+### Response
+
+<ResponseField name="synthesized speech" type="file">
+  The synthesized speech produced by fluxon in the form of bytes. It is streamed back to the client.
+</ResponseField>
+
+<RequestExample>
+
+```bash Example Request
+curl --location 'https://app.fluxon.dev/api/v1/tts/synthesize/29296f0c-6599-4ba5-bbfc-61cc61da4806?text=This%20is%20a%20sample%20piece%20of%20text&speed=100&pitch=100' \
+--header 'Authorization: metlo.abcdEFGH12345678zyxw'
+```
+
+</RequestExample>

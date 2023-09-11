@@ -28,27 +28,12 @@
     "name": "Dashboard",
     "url": "https://dashboard.mintlify.com"
   },
-  "tabs": [
-    {
-      "name": "API Reference",
-      "url": "api-reference"
-    }
-  ],
+  "tabs": [],
   "anchors": [
     {
-      "name": "Documentation",
-      "icon": "book-open-cover",
-      "url": "https://mintlify.com/docs"
-    },
-    {
-      "name": "Community",
-      "icon": "slack",
-      "url": "https://mintlify.com/community"
-    },
-    {
-      "name": "Blog",
-      "icon": "newspaper",
-      "url": "https://mintlify.com/blog"
+      "name": "API Reference",
+      "icon": "code",
+      "url": "api-reference"
     }
   ],
   "navigation": [
@@ -61,36 +46,42 @@
       ]
     },
     {
-      "group": "Essentials",
-      "pages": [
-        "essentials/markdown",
-        "essentials/code",
-        "essentials/images",
-        "essentials/settings",
-        "essentials/navigation"
-      ]
-    },
-    {
       "group": "API Documentation",
       "pages": [
         "api-reference/authentication"
       ]
     },
     {
-      "group": "Endpoint Examples",
+      "group": "General Purpose Endpoints",
       "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/update",
-        "api-reference/endpoint/delete",
-        "api-reference/endpoint/lip-sync/start",
-        "api-reference/endpoint/lip-sync/get"
+        "api-reference/general/health",
+        "api-reference/general/usage"
+      ]
+    },
+    {
+      "group": "Text to Speech Endpoints",
+      "pages": [
+        "api-reference/tts/list",
+        "api-reference/tts/synthesize_oneshot",
+        "api-reference/tts/synthesize_sample",
+        "api-reference/tts/synthesize_sequence",
+        "api-reference/tts/get_synthesize_sequence",
+        "api-reference/tts/custom-voice"
+      ]
+    },
+    {
+      "group": "General Purpose Endpoints",
+      "pages": [
+        "api-reference/general/health",
+        "api-reference/general/usage"
+      ]
+    },
+    {
+      "group": "Lip-Sync Endpoints",
+      "pages": [
+        "api-reference/lip-sync/get",
+        "api-reference/lip-sync/start"
       ]
     }
-  ],
-  "footerSocials": {
-    "twitter": "https://twitter.com/mintlify",
-    "github": "https://github.com/mintlify",
-    "linkedin": "https://www.linkedin.com/company/mintsearch"
-  }
+  ]
 }

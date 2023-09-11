@@ -1,0 +1,75 @@
+---
+title: "Get conversation synthesis"
+api: "GET https://app.fluxon.dev/api/v1/tts/synthesize-sequence"
+description: "This endpoint gets the synthesis status of a conversation"
+---
+
+### Body
+
+<!-- voice_uuid: uuid::Uuid
+text: String
+pitch: Option<i16>
+speed: Option<i16>
+delay_after: Option<f32>
+delay_before: Option<f32> -->
+
+<ParamField path="voiceUuid" type="uuid">
+  The id of the voice to use for the synthesis
+</ParamField>
+
+<ParamField path="text" type="uuid">
+  The text to synthesize
+</ParamField>
+
+<ParamField path="pitch" type="u16">
+  The pitch of the voice to be synthesized
+</ParamField>
+
+<ParamField path="speed" type="u16">
+  The speed of the voice to be synthesized
+</ParamField>
+
+<ParamField path="delayAfter" type="f32">
+  The gap after a synthesized voice. Is optional.
+</ParamField>
+
+<ParamField path="delayBefore" type="f32">
+  The gap before a synthesized voice. Is optional.
+</ParamField>
+
+### Header
+
+<ParamField header="Authorization" type="string">
+  This is the user auth token generated for app.fluxon.dev.
+</ParamField>
+
+### Response
+
+If the conversation has been synthesized, then the response is a sequence of bytes.
+<ResponseField name="synthesized speech" type="file">
+  The synthesized conversation produced by fluxon in the form of bytes.
+</ResponseField>
+
+If it hasn't then, the response is :
+<ResponseField name="status" type="string">
+  The status of the conversation synthesis. Can be **InProgress**, or **Error**
+<RequestExample>
+
+<ResponseField name="error" type="string">
+  Any possible errors that may have been encountered
+<RequestExample>
+
+```bash Example Request
+curl --location 'https://app.fluxon.dev/api/v1/tts/synthesize-sequence/3ae32dda-ff9d-450c-bea2-3feb313edb38' \
+--header 'Authorization: metlo.abcdEFGH12345678zyxw'
+```
+</RequestExample>
+
+<ResponseExample>
+```bash Synthesis in progress
+{
+    "status": "InProgress",
+    "error": null
+}
+```
+</ResponseExample>

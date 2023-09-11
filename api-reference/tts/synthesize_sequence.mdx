@@ -1,0 +1,77 @@
+---
+title: "Synthesize a conversation"
+api: "POST https://app.fluxon.dev/api/v1/tts/synthesize-sequence"
+description: "This endpoint synthesizes is used to synthesize a conversation between multiple voices"
+---
+
+### Body
+
+<ParamField path="voiceUuid" type="uuid">
+  The id of the voice to use for the synthesis
+</ParamField>
+
+<ParamField path="text" type="uuid">
+  The text to synthesize
+</ParamField>
+
+<ParamField path="pitch" type="u16">
+  The pitch of the voice to be synthesized
+</ParamField>
+
+<ParamField path="speed" type="u16">
+  The speed of the voice to be synthesized
+</ParamField>
+
+<ParamField path="delayAfter" type="f32">
+  The gap after a synthesized voice. Is optional.
+</ParamField>
+
+<ParamField path="delayBefore" type="f32">
+  The gap before a synthesized voice. Is optional.
+</ParamField>
+
+### Header
+
+<ParamField header="Authorization" type="string">
+  This is the user auth token generated for app.fluxon.dev.
+</ParamField>
+
+### Response
+
+<ResponseField name="uuid" type="uuid">
+  The id of the task synthesizing the conversation. This can be fetched by using the API at [GET Synthesize Sequence](api-reference/tts/synthesize_sequence)
+</ResponseField>
+
+<RequestExample>
+
+```bash Example Request
+curl --location 'https://app.fluxon.dev/api/v1/tts/synthesize-sequence' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: metlo.abcdEFGH12345678zyxw' \
+--data '[
+    {
+        "voiceUuid": "29296f0c-6599-4ba5-bbfc-61cc61da4806",
+        "text": "This is person 1 speaking",
+        "pitch": 100,
+        "speed": 100,
+        "delayAfter": 0.5
+    },
+    {
+        "voiceUuid": "61b58d9f-b2f5-468c-a081-31d4a90ce983",
+        "text": "This is person 2 speaking",
+        "pitch": 100,
+        "speed": 100,
+        "delayBefore": 0.5
+    }
+]'
+```
+
+</RequestExample>
+
+<ResponseExample>
+```bash Example Response
+{
+    "uuid": "3ae32dda-ff9d-450c-bea2-3feb313edb38"
+}
+```
+</ResponseExample>

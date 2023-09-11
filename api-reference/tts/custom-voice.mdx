@@ -1,0 +1,53 @@
+---
+title: "Create a custom voice"
+api: "POST https://app.fluxon.dev/api/v1/tts/voice/new"
+description: "This endpoint can be used to clone and use a custom voice"
+---
+
+### Body
+
+<ParamField path="voiceSamples" type="file">
+  Voice Sample of the custom voice. Need to be provided as a *.tar.gz* file.
+</ParamField>
+
+<ParamField path="name" type="string">
+  The name of the new custom voice
+</ParamField>
+
+<ParamField path="gender" type="string">
+  The gender of the voice. May be *male*, *female*, or *other*.
+</ParamField>
+
+<ParamField path="language" type="string">
+  The language supported by the voice. Requires a IETF language tag (like en-US, hi-IN, ja-JP etc.)
+</ParamField>
+
+### Header
+
+<ParamField header="Authorization" type="string">
+  This is the user auth token generated for app.fluxon.dev.
+</ParamField>
+
+### Response
+
+<ResponseField name="uuid" type="uuid">
+  The uuid of the new custom voice.
+</ResponseField>
+
+<RequestExample>
+
+```bash Example Request
+curl --location 'https://app.fluxon.dev/api/v1/tts/voice/new' \
+--header 'Authorization: metlo.abcdEFGH12345678zyxw' \
+--form 'name="A cool name"' \
+--form 'gender="female"' \
+--form 'language="en-US"' \
+--form 'voiceSamples=@"/Users/testUser/Documents/sample.tar.gz"'
+```
+</RequestExample>
+
+<ResponseExample>
+```bash Example Response
+  0a7669df-b3c1-4911-b745-e666bcccb7ef
+```
+</ResponseExample>

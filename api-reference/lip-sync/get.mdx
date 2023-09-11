@@ -1,6 +1,6 @@
 ---
 title: "Get Lip Sync Inference"
-api: "POST https://app.fluxon.dev/api/v1/lipsync/inference/{:id}"
+api: "GET https://app.fluxon.dev/api/v1/lipsync/inference/{:id}"
 description: "This endpoint gets the lip-sync inference status and response"
 ---
 
@@ -53,7 +53,7 @@ curl --location 'https://app.fluxon.dev/api/v1/lipsync/inference/fda3de6f-6b8f-4
 {
     "status": "success",
     "error": null,
-    "url": "https://ninad-test-bucket-123.s3.amazonaws.com/5564b3fa-ebe0-4c7d-9ef9-77816beda69f/fda3de6f-6b8f-42d6-a46a-8fdf772bcf19/output_video.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAYTGBCE2Q7QYC66MY%2F20230909%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230909T192328Z&X-Amz-Expires=7260&X-Amz-SignedHeaders=host&X-Amz-Signature=98f80b1d960e92ae54af51fc59d420ca5250fce9284ad2a807a88cbd664a76e4"
+    "url": "https://fluxon-bucket.s3.amazonaws.com/00000000-0000-0000-0000-000000000000/00000000-0000-0000-0000-000000000000/output_video.mp4"
 }
 ```
 

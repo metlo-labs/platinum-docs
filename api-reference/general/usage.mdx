@@ -1,0 +1,64 @@
+---
+title: "Usage"
+api: "GET https://app.fluxon.dev/api/v1/usage"
+description: "This endpoint gets the usage statistics of the API"
+---
+
+### Header
+
+<ParamField header="Authorization" type="string">
+  This is the user auth token generated for app.fluxon.dev.
+</ParamField>
+
+### Response
+
+<ResponseField name="dailyAgg" type="String">
+  The API returns a 200 OK response if it is available
+  <Expandable title="Attributes"> 
+    <ResponseField name="datestr" type="String">
+      The usage date.
+    </ResponseField>
+    <ResponseField name="call_type" type="String">
+      Kind of call performed. Different APIs may consume usage from different pools.
+    </ResponseField>
+    <ResponseField name="num_calls" type="String">
+      The number of calls for a type.
+    </ResponseField>
+    <ResponseField name="num_chars" type="String">
+      The number of chars used in total for a type. May or may not be present dependent on type of API used.
+    </ResponseField>
+    <ResponseField name="num_errs" type="String">
+      The number of errors generated in a given period.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<RequestExample>
+
+```bash Example Request
+curl --location 'https://app.fluxon.dev/api/v1/lipsync/inference/fda3de6f-6b8f-42d6-a46a-8fdf772bcf19' \
+--header 'Authorization: metlo.abcdEFGH12345678zyxw' \
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Sample available
+{
+    "dailyAgg": [
+      {
+        "datestr":"Mon, 11 Sep 2023 00:03:51 GMT",
+        "call_type":"sample_type",
+        "num_calls":123,
+        "num_errs":0,
+      },
+      {
+        ...
+      },
+      ...
+    ]
+}
+```
+
+</ResponseExample>
