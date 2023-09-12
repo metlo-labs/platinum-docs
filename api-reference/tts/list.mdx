@@ -1,0 +1,77 @@
+---
+title: "List Available Voices"
+api: "GET https://app.fluxon.dev/api/v1/tts/voices"
+description: "This endpoint lists the voices available for speech synthesis"
+---
+
+### Header
+
+<ParamField header="Authorization" type="string">
+  This is the user auth token generated for app.fluxon.dev.
+</ParamField>
+
+### Response
+
+<ResponseField name="id" type="uuid">
+  The uuid of the voice
+</ResponseField>
+
+<ResponseField name="gender" type="string">
+  The gender of the voice. May be *male*, *female*, or *other*.
+</ResponseField>
+
+<ResponseField name="name" type="string">
+  The name of the voice.
+</ResponseField>
+
+<ResponseField name="language" type="string">
+  The languages supported by the voice.
+</ResponseField>
+
+<RequestExample>
+
+```bash Example Request
+curl --location 'https://app.fluxon.dev/api/v1/tts/voices' \
+--header 'Authorization: metlo.abcdEFGH12345678zyxw'
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Service available
+[
+    {
+        "id": "6cbf2012-cd28-4d46-b190-cced9a1d1727",
+        "gender": "male",
+        "name": "Alex",
+        "language": "en-US"
+    },
+    {
+        "id": "9623fca3-f5c9-46b0-8891-2c9b4f46ebd7",
+        "gender": "female",
+        "name": "Jessica",
+        "language": "en-US"
+    },
+    {
+        "id": "890d9f43-7f95-4178-9165-d5f713110d0a",
+        "gender": "male",
+        "name": "Christopher",
+        "language": "en-US"
+    },
+    {
+        "id": "96f0c90b-403c-4e6c-8d4b-5bb36877b720",
+        "gender": "male",
+        "name": "Blaise",
+        "language": "en-US"
+    },
+    {
+        "id": "ef9ed500-33c3-4292-bb40-b7a0a9913c2b",
+        "gender": "male",
+        "name": "Linus",
+        "language": "en-US"
+    }
+]
+```
+
+</ResponseExample>
