@@ -1,14 +1,8 @@
 ---
 title: "Health Check"
-api: "GET https://app.fluxon.ai/api/v1/verify"
+api: "GET https://app.fluxon.ai/api/v1"
 description: "This endpoint gets the status of the server"
 ---
-
-### Header
-
-<ParamField header="Authorization" type="string">
-  This is the user auth token generated for app.fluxon.ai.
-</ParamField>
 
 ### Response
 
@@ -19,8 +13,7 @@ description: "This endpoint gets the status of the server"
 <RequestExample>
 
 ```bash Example Request
-curl --location 'https://app.fluxon.ai/api/v1/lipsync/inference/fda3de6f-6b8f-42d6-a46a-8fdf772bcf19' \
---header 'Authorization: metlo.abcdEFGH12345678zyxw' \
+curl --location 'https://app.fluxon.ai/api/v1'
 ```
 
 </RequestExample>
