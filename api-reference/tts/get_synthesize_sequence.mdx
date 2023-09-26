@@ -1,6 +1,6 @@
 ---
 title: "Get conversation synthesis"
-api: "GET https://app.fluxon.dev/api/v1/tts/synthesize-sequence/:id"
+api: "GET https://app.fluxon.ai/api/v1/tts/synthesize-sequence/:id"
 description: "This endpoint gets the synthesis status of a conversation"
 ---
 
@@ -13,7 +13,7 @@ description: "This endpoint gets the synthesis status of a conversation"
 ### Header
 
 <ParamField header="Authorization" type="string">
-  This is the user auth token generated for app.fluxon.dev.
+  This is the user auth token generated for app.fluxon.ai.
 </ParamField>
 
 ### Response
@@ -35,7 +35,7 @@ If it hasn't then, the response is
 <RequestExample>
 
 ```bash Example Request
-curl --location 'https://app.fluxon.dev/api/v1/tts/synthesize-sequence/3ae32dda-ff9d-450c-bea2-3feb313edb38' \
+curl --location 'https://app.fluxon.ai/api/v1/tts/synthesize-sequence/3ae32dda-ff9d-450c-bea2-3feb313edb38' \
 --header 'Authorization: metlo.abcdEFGH12345678zyxw'
 ```
 </RequestExample>

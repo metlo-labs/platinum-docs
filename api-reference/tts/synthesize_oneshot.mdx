@@ -1,6 +1,6 @@
 ---
 title: "Synthesize single text"
-api: "GET https://app.fluxon.dev/api/v1/tts/synthesize/:id"
+api: "GET https://app.fluxon.ai/api/v1/tts/synthesize/:id"
 description: "This endpoint synthesizes a single piece of text in a single API call"
 ---
 
@@ -27,7 +27,7 @@ description: "This endpoint synthesizes a single piece of text in a single API c
 ### Header
 
 <ParamField header="Authorization" type="string">
-  This is the user auth token generated for app.fluxon.dev.
+  This is the user auth token generated for app.fluxon.ai.
 </ParamField>
 
 ### Response
@@ -39,7 +39,7 @@ description: "This endpoint synthesizes a single piece of text in a single API c
 <RequestExample>
 
 ```bash Example Request
-curl --location 'https://app.fluxon.dev/api/v1/tts/synthesize/29296f0c-6599-4ba5-bbfc-61cc61da4806?text=This%20is%20a%20sample%20piece%20of%20text&speed=100&pitch=100' \
+curl --location 'https://app.fluxon.ai/api/v1/tts/synthesize/29296f0c-6599-4ba5-bbfc-61cc61da4806?text=This%20is%20a%20sample%20piece%20of%20text&speed=100&pitch=100' \
 --header 'Authorization: metlo.abcdEFGH12345678zyxw'
 ```
 

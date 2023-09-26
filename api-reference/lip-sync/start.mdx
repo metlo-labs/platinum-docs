@@ -1,6 +1,6 @@
 ---
 title: "Start Lip Sync Inference"
-api: "POST https://app.fluxon.dev/api/v1/lipsync/inference"
+api: "POST https://app.fluxon.ai/api/v1/lipsync/inference"
 description: "This endpoint creates a new lip-sync inference"
 ---
 
@@ -17,7 +17,7 @@ description: "This endpoint creates a new lip-sync inference"
 ### Header
 
 <ParamField header="Authorization" type="string">
-  This is the user auth token generated for app.fluxon.dev.
+  This is the user auth token generated for app.fluxon.ai.
 </ParamField>
 
 <ParamField header="Content-Type" type="string" initialValue="multipart/form-data" default="multipart/form-data" >
@@ -33,7 +33,7 @@ description: "This endpoint creates a new lip-sync inference"
 <RequestExample>
 
 ```bash Example Request
-curl --location 'https://app.fluxon.dev/api/v1/lipsync/inference' \
+curl --location 'https://app.fluxon.ai/api/v1/lipsync/inference' \
 --header 'Authorization: metlo.abcdEFGH12345678zyxw' \
 --form 'audio=@"/Users/test-user/audio.wav"' \
 --form 'video=@"/Users/test-user/video.mp4"'
